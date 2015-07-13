@@ -1,6 +1,15 @@
-<link rel="import" href="components/polymer/polymer.html">
-<link rel="import" href="components/paper-button/paper-button.html">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-button/paper-button.html">
 
+<!--
+A paper share button for facebook
+
+Example:
+
+    <paper-share-facebook href="http://www.nasa.gov/ames/kepler/nasas-kepler-discovers-first-earth-size-planet-in-the-habitable-zone-of-another-star" raised></paper-share-facebook>
+
+@demo
+-->
 <dom-module id="paper-share-facebook">
   <style>
     #button {
@@ -35,35 +44,51 @@
      * Element properties
      */
     properties: {
-      link: {
+
+      /**
+       * Optional; Defaults to the current page's url
+       */
+      href: {
         type: String,
         value: window.location.href
       },
 
-      url: {
-        type: String,
-        computed: 'computeUrl(link)'
-      },
-
+      /**
+       * Apply `raised` property to `paper-button`
+       */
       raised: {
         type: Boolean,
         notify: true,
         reflectToAttribute: true
+      },
+
+      /**
+       * Apply `noink` property to `paper-button`
+       */
+      noink: {
+        type: Boolean,
+        notify: true,
+        reflectToAttribute: true
+      },
+
+      _url: {
+        type: String,
+        computed: 'computeUrl(href)'
       }
     },
 
     /**
      * Concat the share url
      */
-    computeUrl: function(link) {
-      return 'https://www.facebook.com/sharer/sharer.php?u=' + link;
+    computeUrl: function(href) {
+      return 'https://www.facebook.com/sharer/sharer.php?u=' + href;
     },
 
     /**
      * Navigate to the social authorization
      */
     navigate: function() {
-      window.open(this.url, 'facebook-share', 'width=580,height=296');
+      window.open(this._url, 'facebook-share', 'width=580,height=296');
       return false;
     }
   });

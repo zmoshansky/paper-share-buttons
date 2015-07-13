@@ -2,7 +2,7 @@
 
 Web Componentand material implementation of social share buttons (facebook, twitter and google+).
 
-## Demo
+## Demo & Documentation
 
 > [Check it live](http://grvcoelho.github.io/paper-share-buttons).
 
@@ -15,6 +15,17 @@ $ bower install paper-share-buttons --save
 ```
 
 Or [download as ZIP](https://github.com/grvcoelho/paper-share-buttons/archive/master.zip).
+
+## Dependencies
+
+Element dependencies are managed via [Bower](http://bower.io/). You can
+install that via:
+
+    npm install -g bower
+
+Then, go ahead and download the element's dependencies:
+
+    bower install
 
 ## Usage
 
@@ -70,25 +81,19 @@ Attribute | Options                                 | Description
 
 ## Development
 
-In order to run it locally you'll need to fetch some dependencies and a basic server setup.
+If you wish to work on your element in isolation, we recommend that you use
+[Polyserve](https://github.com/PolymerLabs/polyserve) to keep your element's
+bower dependencies in line. You can install it via:
 
-* Install [Bower](http://bower.io/) & [gulp](http://gulpjs.com/):
+    npm install -g polyserve
 
-    ```sh
-    $ [sudo] npm install -g bower gulp
-    ```
+And you can run it via:
 
-* Install local dependencies:
+    polyserve
 
-    ```sh
-    $ bower install && npm install
-    ```
+Once running, you can preview your element at
+`http://localhost:8080/components/paper-share-buttons/`
 
-* To test your project, start the development server and open `http://localhost:3000`.
-
-    ```sh
-    $ gulp
-    ```
 
 ## Contributing
 

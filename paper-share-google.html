@@ -1,6 +1,15 @@
-<link rel="import" href="components/polymer/polymer.html">
-<link rel="import" href="components/paper-button/paper-button.html">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-button/paper-button.html">
 
+<!--
+A paper share button for google+
+
+Example:
+
+    <paper-share-google href="http://www.nasa.gov/ames/kepler/nasas-kepler-discovers-first-earth-size-planet-in-the-habitable-zone-of-another-star" raised></paper-share-google>
+
+@demo
+-->
 <dom-module id="paper-share-google">
   <style>
     #button {
@@ -35,35 +44,51 @@
      * Element properties
      */
     properties: {
-      link: {
+
+      /**
+       * Optional; Defaults to the current page's url
+       */
+      href: {
         type: String,
         value: window.location.href
       },
 
-      url: {
-        type: String,
-        computed: 'computeUrl(link)'
-      },
-
+      /**
+       * Apply `raised` property to `paper-button`
+       */
       raised: {
         type: Boolean,
         notify: true,
         reflectToAttribute: true
+      },
+
+      /**
+       * Apply `noink` property to `paper-button`
+       */
+      noink: {
+        type: Boolean,
+        notify: true,
+        reflectToAttribute: true
+      },
+
+      _url: {
+        type: String,
+        computed: 'computeUrl(href)'
       }
     },
 
     /**
      * Concat the share url
      */
-    computeUrl: function(link) {
-      return 'https://plus.google.com/share?url=' + link;
+    computeUrl: function(href) {
+      return 'https://plus.google.com/share?url=' + href;
     },
 
     /**
      * Navigate to the social authorization
      */
     navigate: function() {
-      window.open(this.url, 'google-share', 'width=490,height=530');
+      window.open(this._url, 'google-share', 'width=490,height=530');
       return false;
     }
   });

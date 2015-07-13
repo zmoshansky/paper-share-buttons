@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <title>Paper Share Buttons (@grvcoelho)</title>
   <link rel="shortcut icon" href="favicon.png">
-  <script src="components/webcomponentsjs/webcomponents-lite.min.js"></script>
-  <link rel="import" href="paper-share-facebook.html">
-  <link rel="import" href="paper-share-twitter.html">
-  <link rel="import" href="paper-share-google.html">
-  <link rel="import" href="components/font-roboto/roboto.html">
+  <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../paper-share-facebook.html">
+  <link rel="import" href="../paper-share-twitter.html">
+  <link rel="import" href="../paper-share-google.html">
+  <link rel="import" href="../../font-roboto/roboto.html">
+  <link rel="import" href="../../paper-styles/demo-pages.html">
 </head>
 
-<body>
+<body unresolved>
   <style is="custom-style">
     html, body {
       font-family: "RobotoDraft", sans-serif;
@@ -36,20 +37,18 @@
   <section>
     <h1>Facebook</h1>
 
-    <paper-share-facebook href="http://www.nasa.gov/ames/kepler/nasas-kepler-discovers-first-earth-size-planet-in-the-habitable-zone-of-another-star"></paper-share-facebook>
-    <paper-share-facebook raised href="http://www.nasa.gov/ames/kepler/nasas-kepler-discovers-first-earth-size-planet-in-the-habitable-zone-of-another-star"></paper-share-facebook>
+    <paper-share-facebook></paper-share-facebook>
+
+    <paper-share-facebook href="http://www.nasa.gov/ames/kepler/nasas-kepler-discovers-first-earth-size-planet-in-the-habitable-zone-of-another-star" raised></paper-share-facebook>
   </section>
 
   <section>
     <h1>Twitter</h1>
 
-    <paper-share-twitter
-      user="nasa"
-      text="NASA's Kepler Discovers First Earth-Size Planet In The 'Habitable Zone' of Another Star"
-      href="http://www.nasa.gov/ames/kepler/nasas-kepler-discovers-first-earth-size-planet-in-the-habitable-zone-of-another-star"></paper-share-twitter>
+    <paper-share-twitter></paper-share-twitter>
 
     <paper-share-twitter
-      username="nasa"
+      user="nasa"
       text="NASA's Kepler Discovers First Earth-Size Planet In The 'Habitable Zone' of Another Star"
       href="http://www.nasa.gov/ames/kepler/nasas-kepler-discovers-first-earth-size-planet-in-the-habitable-zone-of-another-star"
       raised></paper-share-twitter>
@@ -58,7 +57,7 @@
   <section>
     <h1>Google Plus</h1>
 
-    <paper-share-google href="http://www.nasa.gov/ames/kepler/nasas-kepler-discovers-first-earth-size-planet-in-the-habitable-zone-of-another-star"></paper-share-google>
+    <paper-share-google></paper-share-google>
 
     <paper-share-google href="http://www.nasa.gov/ames/kepler/nasas-kepler-discovers-first-earth-size-planet-in-the-habitable-zone-of-another-star" raised></paper-share-google>
   </section>
